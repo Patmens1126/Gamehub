@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - GameHub</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">&#x1F3AE; GameHub</div>
+    <ul>
+      <li><a href="/public/index.html">Home</a></li>
+      <li><a href="/public/about.html">About</a></li>
+      <li><a href="/public/games.html">Games</a></li>
+      <li><a href="/public/cart.html">Cart <span class="cart-badge" id="cartCount" style="display:none;">0</span></a></li>
+      <li><a href="/public/admin.html" class="admin-link">Admin</a></li>
+      <li><a href="/public/login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <h1>About GameHub</h1>
+    <p>
+      GameHub is a modern online gaming platform that allows users to
+      browse, purchase and manage video games easily.
+    </p>
+
+    <h2 style="margin-top: 30px;">Football News</h2>
+    <p style="color: #aaa;">Live headlines pulled automatically from trusted football sources.</p>
+    <div id="newsStatus" style="margin: 10px 0; min-height: 20px;"></div>
+    <div id="newsGrid" class="game-grid"></div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/public/js/auth.js"></script>
+  <script src="/public/js/about.js"></script>
+  <script src="/public/js/cart_badge.js"></script>
+</body>
+</html>

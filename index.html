@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming App</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">&#x1F3AE; GameHub</div>
+    <ul>
+      <li><a href="/public/index.html">Home</a></li>
+      <li><a href="/public/about.html">About</a></li>
+      <li><a href="/public/games.html">Games</a></li>
+      <li><a href="/public/cart.html">Cart <span class="cart-badge" id="cartCount" style="display:none;">0</span></a></li>
+      <li><a href="/public/admin.html" class="admin-link">Admin</a></li>
+      <li><a href="/public/login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Your win is our priority!</h1>
+      <p>The only games that secure your win & ensure your satisfaction.</p>
+      <a href="/public/games.html" class="hero-btn">Browse Games</a>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>Elite Picks</h3>
+      <p>Curated premium booking codes selected for serious winners only.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Private Access</h3>
+      <p>Your purchases stay exclusive to your account and unlock instantly after payment.</p>
+    </div>
+    <div class="feature-card">
+      <h3>VIP Experience</h3>
+      <p>Clean, premium delivery built for speed, confidence, and consistency every day.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 GameHub Store. All rights reserved.</p>
+    <p>Premium Booking Codes Service | Support: support@gamehub.com</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/public/js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="/public/js/cart_badge.js"></script>
+</body>
+</html>

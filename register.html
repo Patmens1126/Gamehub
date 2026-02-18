@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">&#x1F3AE; GameHub</div>
+    <ul>
+      <li><a href="/public/index.html">Home</a></li>
+      <li><a href="/public/about.html">About</a></li>
+      <li><a href="/public/games.html">Games</a></li>
+      <li><a href="/public/cart.html">Cart <span class="cart-badge" id="cartCount" style="display:none;">0</span></a></li>
+      <li><a href="/public/admin.html" class="admin-link">Admin</a></li>
+      <li><a href="/public/login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <div class="form" style="max-width: 450px;">
+      <h1 style="margin-bottom: 30px; color: #00ffff;">Join GameHub</h1>
+
+      <div id="registerStatus" style="margin-bottom: 20px; min-height: 20px; text-align: center;"></div>
+
+      <input id="name" placeholder="Full Name" required>
+      <input id="email" type="email" placeholder="Email Address" required>
+      <input id="phone" type="tel" placeholder="Phone Number" required>
+      <input id="password" type="password" placeholder="Password (min 6 chars)" required>
+      <input id="password_confirm" type="password" placeholder="Confirm Password" required>
+
+      <button onclick="register()" style="margin-top: 20px;">
+        Create Account
+      </button>
+
+      <p style="margin-top: 20px; text-align: center; color: #aaa;">
+        Already have an account?
+        <a href="/public/login.html" style="color: #00ffff; text-decoration: none; font-weight: bold;">
+          Login here
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/public/js/auth.js"></script>
+  <script src="/public/js/cart_badge.js"></script>
+
+</body>
+</html>

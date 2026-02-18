@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - GameHub</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">&#x1F3AE; GameHub Admin</div>
+    <ul>
+      <li><a href="/public/index.html">Home</a></li>
+      <li><a href="/public/about.html">About</a></li>
+      <li><a href="/public/games.html">Store</a></li>
+      <li><a href="/public/cart.html">Cart <span class="cart-badge" id="cartCount" style="display:none;">0</span></a></li>
+      <li><a href="/public/admin.html" class="btn admin-link">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <h1>Admin Dashboard</h1>
+
+    <!-- ADD BOOKING CODE -->
+    <div class="form">
+      <h2>Add Booking Code</h2>
+      <input id="bookingCode" placeholder="Sportybet Booking Code (e.g., ABC123XYZ)">
+      <input id="title" placeholder="Title (optional)">
+      <input id="price" placeholder="Price" type="number" step="0.01">
+      <textarea id="description" placeholder="Description (optional)"></textarea>
+      <button onclick="addGame()">Add Booking Code</button>
+      <div id="addGameStatus" style="margin-top: 15px; min-height: 20px;"></div>
+    </div>
+
+    <!-- CODES LIST -->
+    <h2>All Booking Codes</h2>
+    <div id="games" class="game-grid"></div>
+
+    <!-- RECOVERY GAMES -->
+    <div class="form" id="recoverySection">
+      <h2>Recovery Games</h2>
+      <p style="color:#aaa; font-size:14px; margin-bottom:10px;">Upload only booking code to recovery queue</p>
+      <input id="recBookingCode" placeholder="Sportybet Booking Code (e.g., ABC123XYZ)">
+      <button onclick="uploadRecovery()">Upload to Recovery</button>
+      <div id="recoveryStatus" style="margin-top: 10px; min-height:20px;"></div>
+    </div>
+
+    <h2>Recovery Queue</h2>
+    <div id="recoveryList" class="game-grid"></div>
+
+    <!-- USERS -->
+    <h2>Users</h2>
+    <div id="users"></div>
+
+    <!-- ORDERS -->
+    <h2>Orders</h2>
+    <div id="orders"></div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/public/js/auth.js"></script>
+  <script src="/public/js/admin.js"></script>
+  <script src="/public/js/cart_badge.js"></script>
+</body>
+</html>
