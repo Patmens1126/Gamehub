@@ -1,0 +1,837 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0b0f1a;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10,10,30,0.85);
+  backdrop-filter: blur(12px);
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: cyan;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: cyan;
+}
+
+.btn {
+  background: cyan;
+  color: black !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.profile-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  border-radius: 18px;
+  background: rgba(0, 255, 255, 0.08);
+}
+
+.profile-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #021417;
+  background: #00ffff;
+}
+
+.profile-meta {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.profile-meta strong {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.profile-meta small {
+  font-size: 10px;
+  color: #9ecfd4;
+}
+
+.navbar li[data-nav="profile"] {
+  position: relative;
+}
+
+.profile-popover {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  min-width: 220px;
+  background: #0d1322;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-popover[hidden] {
+  display: none !important;
+}
+
+.profile-popover .profile-name {
+  font-size: 13px;
+}
+
+.profile-popover .profile-email {
+  font-size: 11px;
+  color: #9ecfd4;
+}
+
+.profile-edit-btn {
+  margin-top: 4px;
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  background: transparent;
+  color: #d9fdff;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: left;
+}
+
+.profile-logout-btn {
+  border: 1px solid rgba(255, 90, 90, 0.45);
+  background: rgba(255, 80, 80, 0.12);
+  color: #ffd7d7;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: left;
+}
+
+.admin-link {
+  display: none;
+}
+
+.cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  margin-left: 6px;
+  background: #ff3b30;
+  color: #ffffff;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  box-shadow: 0 0 8px rgba(255, 59, 48, 0.6);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #1b1f4a, #050714);
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  animation: fadeIn 1.2s;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: cyan;
+  color: black;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.4s;
+  font-weight: bold;
+}
+
+.hero-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px cyan;
+}
+
+/* ================= PAGE LAYOUT ================= */
+
+.page {
+  padding: 80px;
+  text-align: center;
+  animation: fadeIn 0.8s;
+}
+
+.page h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.games-subtitle {
+  font-size: 16px;
+  color: #aaaaaa;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* ================= FEATURES (ABOUT) ================= */
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  width: 220px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 15px cyan;
+}
+
+/* ================= GAMES ================= */
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.game-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 18px;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.match-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.match-league {
+  font-size: 12px;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.match-score {
+  font-size: 32px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 10px cyan;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.match-date {
+  font-size: 13px;
+  color: #bbbbbb;
+  text-align: center;
+}
+
+.game-price {
+  font-size: 16px;
+  color: #ffd700;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px cyan;
+  border-color: rgba(0, 255, 255, 0.6);
+}
+
+.game-card button {
+  margin-top: auto;
+  padding: 10px 15px;
+  background: cyan;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.game-card button:hover {
+  background: #00ffff;
+  box-shadow: 0 0 10px cyan;
+}
+
+/* ================= CART ================= */
+
+.cart-item {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin: 15px auto;
+  width: 60%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-total {
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+/* ================= FORMS ================= */
+
+.form {
+  max-width: 400px;
+  margin: 50px auto;
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+.form input, .form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.form input:focus, .form textarea:focus {
+  border-color: cyan;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #00ffff, #0099ff);
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  color: black;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  box-shadow: 0 0 15px cyan;
+  transform: translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  opacity: 0.7;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+/* Extra Large Devices (1920px and up) */
+@media (min-width: 1920px) {
+  .navbar {
+    padding: 20px 100px;
+  }
+  
+  .page {
+    padding: 100px 120px;
+  }
+}
+
+/* Large Devices (1200px to 1919px) */
+@media (max-width: 1919px) {
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Medium Devices (768px to 1199px) - Tablets */
+@media (max-width: 1199px) {
+  .navbar {
+    padding: 12px 30px;
+  }
+  
+  .logo {
+    font-size: 18px;
+  }
+  
+  .navbar ul {
+    gap: 15px;
+  }
+  
+  .navbar a {
+    font-size: 14px;
+  }
+  
+  .page {
+    padding: 50px 40px;
+  }
+  
+  .page h1 {
+    font-size: 32px;
+  }
+  
+  .hero-text h1 {
+    font-size: 45px;
+  }
+  
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .features {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    width: 160px;
+    padding: 20px;
+  }
+  
+  .form {
+    max-width: 350px;
+    padding: 30px;
+  }
+  
+  .cart-item {
+    width: 85%;
+    padding: 15px;
+  }
+}
+
+/* Small Devices (481px to 767px) - Large Phones */
+@media (max-width: 767px) {
+  * {
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+  
+  /* Navbar */
+  .navbar {
+    padding: 10px 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .navbar a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+  
+  .btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 60vh;
+    padding: 20px;
+  }
+  
+  .hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-text p {
+    font-size: 14px;
+  }
+  
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  
+  /* Page Layout */
+  .page {
+    padding: 30px 15px;
+  }
+  
+  .page h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  
+  .games-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Games Grid */
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .game-card {
+    padding: 18px;
+    gap: 10px;
+  }
+  
+  .match-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .match-league {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  
+  .match-score {
+    font-size: 28px;
+    margin: 12px 0;
+  }
+  
+  .match-date {
+    font-size: 12px;
+  }
+  
+  .game-price {
+    font-size: 14px;
+  }
+  
+  .game-card button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  /* Features */
+  .features {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .feature-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+  }
+  
+  /* Forms */
+  .form {
+    max-width: 100%;
+    margin: 30px 15px;
+    padding: 25px 15px;
+  }
+  
+  .form h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .form input,
+  .form textarea {
+    padding: 10px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  
+  .form button {
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  /* Cart */
+  .cart-item {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cart-total {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+/* Extra Small Devices (320px to 480px) - Small Phones */
+@media (max-width: 480px) {
+  * {
+    font-size: 14px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  
+  .logo {
+    font-size: 14px;
+  }
+  
+  .navbar ul {
+    gap: 5px;
+  }
+  
+  .navbar a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 50vh;
+  }
+  
+  .hero-text h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-text p {
+    font-size: 12px;
+  }
+  
+  .hero-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  /* Page */
+  .page {
+    padding: 20px 10px;
+  }
+  
+  .page h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .games-subtitle {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  /* Games Grid */
+  .game-grid {
+    gap: 12px;
+  }
+  
+  .game-card {
+    padding: 15px;
+    gap: 8px;
+  }
+  
+  .match-title {
+    font-size: 14px;
+  }
+  
+  .match-league {
+    font-size: 10px;
+  }
+  
+  .match-score {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .match-date {
+    font-size: 11px;
+  }
+  
+  .game-price {
+    font-size: 13px;
+  }
+  
+  .game-card button {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+  
+  /* Features */
+  .feature-card {
+    padding: 15px;
+    width: 100%;
+  }
+  
+  /* Forms */
+  .form {
+    margin: 20px 10px;
+    padding: 20px 12px;
+  }
+  
+  .form h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .form input,
+  .form textarea {
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  
+  .form button {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .form textarea {
+    min-height: 60px;
+  }
+  
+  /* Cart */
+  .cart-item {
+    margin: 8px 0;
+    padding: 12px;
+  }
+  
+  .cart-total {
+    font-size: 16px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+/* Landscape Mode for Small Phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    height: 100vh;
+  }
+  
+  .hero-text h1 {
+    font-size: 28px;
+  }
+  
+  .page {
+    padding: 20px;
+  }
+}
+
